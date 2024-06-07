@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
 //DB::listen(function ($query){
@@ -41,7 +42,7 @@ use App\Http\Controllers\RoleController;
 
 Route::group(['middleware'=>['auth']],function (){
     Route::resource('roles',RoleController::class);
-//    Route::resource('usuarios',UsuarioController::class);
+    Route::resource('usuarios',UserController::class);
 //    Route::resource('blogs',BlogController::class);
 });
 
